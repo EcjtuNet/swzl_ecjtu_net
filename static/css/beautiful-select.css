@@ -1,0 +1,64 @@
+.beautiful-select ul { list-style-type: none; padding: 0; }
+.beautiful-select a { text-decoration: none; }
+.beautiful-select a:hover { text-decoration: none; }
+.beautiful-select {
+    width: 93px;
+    font-size: 16px;
+    font-family: "Microsoft YaHei", 微软雅黑;
+    background-color: #f5f5f5;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f5f5f5));
+    background: -moz-linear-gradient(top, #ffffff, #f5f5f5);
+    background: -o-linear-gradient(top, #ffffff, #f5f5f5);
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+    .beautiful-select a {
+        padding: 5px 15px 5px 8px;
+        width: 70px;
+        height: 25px;
+    }
+    .beautiful-select a,
+    .beautiful-select a:link,
+    .beautiful-select a:visited {
+        display: block;
+        color: #333333;
+    }
+.bs-label {
+    width: 93px;
+    height: 35px;
+    line-height: 22px;
+    color: #333333;
+    text-shadow: #ffffff 1px 1px 0;
+    background: 90% no-repeat url('../img/arrows.png');
+    display: block;
+}
+.bs-list {
+    margin-top: -1px;
+    background-color: #f5f5f5;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f5f5f5));
+    background: -moz-linear-gradient(top, #ffffff, #f5f5f5);
+    background: -o-linear-gradient(top, #ffffff, #f5f5f5);
+}
+.bs-list-open {
+    -moz-box-shadow: 0 0 5px #40b5e2;
+    -webkit-box-shadow: 0 0 5px #40b5e2;
+    box-shadow: 0 0 5px #40b5e2;
+    position: absolute;
+    z-index: 10;
+}
+.bs-list-close {
+    display: none;
+}
+.bs-option {
+    width: 93px;
+    height: 35px;
+    line-height: 22px;
+}
+.bs-option a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: rgba(0, 0, 0, .5) 0 1px 0;
+    background-color: #0084c7;
+    border-bottom-color: #004c72;
+}
