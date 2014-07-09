@@ -1,0 +1,247 @@
+@charset "UTF-8";
+/* EcjtuNet 失物招领移动前端
+ *
+ *日新网失物招领移动端页面
+ *
+ *@author           Venshy at EcjtuNet
+ *@version          0.1
+ *@last-time        2014.7.9
+ *
+ */
+/* 配色
+ ----------------------------------------------------------*/
+/* 布局
+ ----------------------------------------------------------*/
+/* 字体
+ ----------------------------------------------------------*/
+/* 路径
+ ----------------------------------------------------------*/
+/* 文件载入
+ ----------------------------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+ /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*  css reset  */
+/* 圆角
+ --------------------------------------------------*/
+/*  混入文件  */
+* {
+  margin: 0;
+  padding: 0; }
+
+#content {
+  overflow: hidden;
+  margin-top: 66px; }
+
+.main {
+  width: 100%;
+  float: left; }
+  .main .main-wrap {
+    margin: 0 14px 0 14px; }
+
+.sub {
+  width: 14px;
+  float: left;
+  margin-left: -100%; }
+
+.extra {
+  width: 14px;
+  margin-left: -14px;
+  float: left; }
+
+#footer {
+  width: 100%; }
+
+#header {
+  width: 100%;
+  position: absolute;
+  top: 0; }
+
+/*  布局  */
+/* =page
+ ----------------------------------------------------------*/
+/* =header
+ ----------------------------------------------------------*/
+#header {
+  background: url("../images/onepx.png") repeat-x;
+  height: 66px; }
+  #header div#header-wrap {
+    width: 94.53125%;
+    height: 52px;
+    margin: 4px auto 0;
+    border: 3px solid #57a5f1;
+    position: relative;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px; }
+    #header div#header-wrap h1 {
+      position: absolute;
+      right: 15px;
+      top: 6px;
+      font-size: 0;
+      width: 110px;
+      height: 27px;
+      background: blue url("../images/all.jpg") no-repeat -78px 0; }
+    #header div#header-wrap #sitelogo {
+      position: absolute;
+      left: 6px;
+      top: 25px;
+      width: 73px;
+      height: 23px;
+      background: url("../images/all.jpg") no-repeat -5px 0; }
+    #header div#header-wrap a#siteurl {
+      display: block;
+      position: absolute;
+      right: 15px;
+      top: 33px;
+      font: 11px/1 "Microsoft YaHei", "微软雅黑", sans-serif;
+      color: white;
+      text-decoration: none; }
+
+/* =content
+ ----------------------------------------------------------*/
+.main-wrap {
+  padding-top: 5px; }
+  .main-wrap #findbtn, .main-wrap #lostbtn {
+    width: 82px;
+    height: 26px;
+    font: 18px/26px "Microsoft YaHei", "微软雅黑", sans-serif;
+    cursor: pointer;
+    color: #a6aaaa;
+    float: left;
+    margin-right: 8px;
+    background: none;
+    text-align: center;
+    border: 3px solid #a6aaaa;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px; }
+  .main-wrap .active {
+    color: #3f9bf4 !important; }
+  .main-wrap #search {
+    position: relative;
+    top: 7px;
+    width: 99.3007%;
+    border: 3px solid #a6aaaa;
+    height: 31px;
+    padding-left: 10px;
+    clear: both;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px; }
+    .main-wrap #search #searchInput {
+      border: 0;
+      width: 81.33803%;
+      height: 31px;
+      clear: both;
+      font: 16px "宋体", sans-serif;
+      color: #a6aaaa;
+      outline: none; }
+    .main-wrap #search #searchBtnBox {
+      border: 1px solid #aaa;
+      border-radius: 8px;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -ms-border-radius: 8px;
+      position: absolute;
+      right: 3.28767%;
+      top: 70px;
+      background: #aaa;
+      width: 25px;
+      height: 21px;
+      background: url("../images/all.jpg") no-repeat -5px -25px;
+      display: block; }

@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+/* 圆角
+ --------------------------------------------------*/
+@mixin radius($radius:5px) {
+    border-radius:$radius; 
+    -webkit-border-radius:$radius; 
+    -moz-border-radius:$radius;
+    -ms-border-radius:$radius;
+}

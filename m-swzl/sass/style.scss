@@ -1,0 +1,179 @@
+@charset "utf-8";
+
+/* EcjtuNet 失物招领移动前端
+ *
+ *日新网失物招领移动端页面
+ *
+ *@author           Venshy at EcjtuNet
+ *@version          0.1
+ *@last-time        2014.7.9
+ *
+ */
+ 
+ 
+
+/* 配色
+ ----------------------------------------------------------*/
+$page-bg :              #f4f4f4;
+$main-bg :              #dbdbdb;
+$main-text-color :      #000;
+$thing-text-color :     #3f9bf4;
+$note-color :           #fff;
+$unac-btn-color :       #a6aaaa;
+$active-btn-color :     #3f9bf4 !important;
+$btn-border-color :     #a6aaaa;
+$search-text-color :    #a6aaaa;
+$search-border :        #a6aaaa;
+$search-btn-bg :        #a6aaaa;
+$header-bg :            blue !default;
+$header-border :        #57a5f1;
+
+
+/* 布局
+ ----------------------------------------------------------*/
+$header-height :        66px;
+$main-width :           100%;
+$sub-width :            14px !default;
+$extra-width :          14px !default;
+$btn-height :           26px;
+
+/* 字体
+ ----------------------------------------------------------*/
+$siteurl-font :         11px/1.0 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$btn-font :             18px/26px "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$search-font :          16px "宋体", sans-serif;
+$list-font :            16px/1.0 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$thing-font :           14px/1.0 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$main-font :            11px/1.0 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$date-font :            11px/1.0 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$phone-font :           14px/1.0 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+
+
+/* 路径
+ ----------------------------------------------------------*/
+$sprite-path :  "../images/all.jpg";
+$onepx :        "../images/onepx.png";
+
+/* 文件载入
+ ----------------------------------------------------------*/
+@import  "reset";                  /*  css reset  */
+@import  "mixin";                  /*  混入文件  */
+@import  "layout/s-m-e";           /*  布局  */
+
+/* =page
+ ----------------------------------------------------------*/
+
+/* =header
+ ----------------------------------------------------------*/
+#header{
+    background: url($onepx) repeat-x; 
+    height: $header-height;
+    
+    div#header-wrap{
+        width: (605/640)*100%;
+        height: 52px;
+        margin: 4px auto 0;
+        border: 3px solid $header-border;
+        position: relative;
+        @include radius(5px);
+        
+        h1{
+            position: absolute; 
+            right: 15px; 
+            top: 6px; 
+            font-size: 0; 
+            width: 110px; 
+            height: 27px;
+            background:$header-bg url($sprite-path) 
+                no-repeat -78px 0;
+        }
+        
+        #sitelogo{
+            position: absolute; 
+            left: 6px; 
+            top: 25px; 
+            width: 73px; 
+            height: 23px; 
+            background: url($sprite-path) no-repeat -5px 0;
+        }
+        
+        a#siteurl{ 
+            display: block;
+            position: absolute;
+            right: 15px;
+            top: 33px; 
+            font: $siteurl-font;
+            color: $note-color;
+            text-decoration: none;
+        }
+        
+    }
+}
+
+
+/* =content
+ ----------------------------------------------------------*/
+.main-wrap{ 
+    padding-top: 5px;
+    
+    #findbtn, #lostbtn{ 
+        width: 82px; 
+        height: $btn-height; 
+        font: $btn-font;
+        cursor: pointer; 
+        color: $unac-btn-color; 
+        float: left; 
+        margin-right: 8px;
+        background: none; 
+        text-align: center; 
+        border:3px solid $btn-border-color; 
+        @include radius(6px);
+    }
+    
+    .active{
+        color: $active-btn-color;
+    }
+        
+    #search{ 
+        position: relative;
+        top: 7px;
+        width: (284/286)*100%;
+        border:3px solid $search-border;
+        height: 31px;
+        padding-left:10px;
+        clear: both;  
+        @include radius(8px);
+        
+        #searchInput{ 
+            border: 0;
+            width: (231/284)*100%;
+            height: 31px; 
+            clear: both; 
+            font: $search-font; 
+            color: $search-text-color;
+            
+            outline: none;
+        }
+        
+        #searchBtnBox{
+            border: 1px solid #aaa; 
+            @include radius(8px);
+            position: absolute; 
+            right: ( (48) / 1460 ) * 100%; 
+            top: 70px; 
+            background: #aaa;
+            width: 25px; 
+            height: 21px; 
+            background: url($sprite-path) 
+            no-repeat -5px -25px;
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+* { margin: 0; padding: 0; }
+#content {
+	overflow: hidden;
+	margin-top: $header-height; 
+}
+.main {
+	width: 100%; 
+	float: left;
+	.main-wrap {
+		margin: 0 $extra-width 0 $sub-width;
+	}
+}
+.sub {
+	width: $sub-width;
+	float: left;
+	margin-left: -100%;
+}
+.extra {
+	width: $extra-width;
+	margin-left: -$extra-width;
+	float: left; 
+}
+#footer { width: 100%; }
+#header { width: 100%; position: absolute; top: 0; }
