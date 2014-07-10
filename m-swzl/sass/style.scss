@@ -14,11 +14,11 @@
 
 /* 配色
  ----------------------------------------------------------*/
-$page-bg :              #f4f4f4;
+$page-bg :              #f4f4f4;              /* 页面底色 */
 $main-bg :              #dbdbdb;
 $main-text-color :      #000;
-$thing-text-color :     #3f9bf4;
-$note-color :           #fff;
+$thing-text-color :     #3f9bf4;              /* 物品名称 */
+$note-color :           #fff;       /* tel,url,adress,date */
 $unac-btn-color :       #a6aaaa;
 $active-btn-color :     #3f9bf4 !important;
 $btn-border-color :     #a6aaaa;
@@ -27,6 +27,11 @@ $search-border :        #a6aaaa;
 $search-btn-bg :        #a6aaaa;
 $header-bg :            blue !default;
 $header-border :        #57a5f1;
+$list-border :          #0562bc;
+$notice-kind :          #474747;              /* 物品类别 */
+$load-text :            #717171;
+$load-border :          #0562bc;
+$footer-text-color :    #467593;
 
 
 /* 布局
@@ -43,8 +48,9 @@ $siteurl-font :         11px/1.0 "Microsoft YaHei",
                             "微软雅黑", sans-serif;
 $btn-font :             18px/26px "Microsoft YaHei",
                             "微软雅黑", sans-serif;
-$search-font :          16px "宋体", sans-serif;
-$list-font :            16px/1.0 "Microsoft YaHei",
+$search-font :          16px "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$list-font :            16px/22px "Microsoft YaHei",
                             "微软雅黑", sans-serif;
 $thing-font :           14px/1.0 "Microsoft YaHei",
                             "微软雅黑", sans-serif;
@@ -53,6 +59,14 @@ $main-font :            11px/1.0 "Microsoft YaHei",
 $date-font :            11px/1.0 "Microsoft YaHei",
                             "微软雅黑", sans-serif;
 $phone-font :           14px/1.0 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$notice-kind-font :     9px/1.0 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$load-font :            16px/1.5 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$friendlink-font :      6px/1.5 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$copyright-font :       6px/1.5 "Microsoft YaHei",
                             "微软雅黑", sans-serif;
 
 
@@ -69,6 +83,9 @@ $onepx :        "../images/onepx.png";
 
 /* =page
  ----------------------------------------------------------*/
+em{
+    vertical-align:middle;
+}
 
 /* =header
  ----------------------------------------------------------*/
@@ -120,9 +137,15 @@ $onepx :        "../images/onepx.png";
 
 /* =content
  ----------------------------------------------------------*/
+#content{
+    background: $page-bg;
+}
 .main-wrap{ 
     padding-top: 5px;
-    
+    overflow: hidden;
+    height: 700px;
+
+    /* 寻物招领按钮 */
     #findbtn, #lostbtn{ 
         width: 82px; 
         height: $btn-height; 
@@ -133,47 +156,250 @@ $onepx :        "../images/onepx.png";
         margin-right: 8px;
         background: none; 
         text-align: center; 
-        border:3px solid $btn-border-color; 
+        border:2px solid $btn-border-color; 
         @include radius(6px);
     }
-    
+    /* 寻物招领按钮active */
     .active{
         color: $active-btn-color;
     }
-        
+    /* 搜索框 */
     #search{ 
         position: relative;
         top: 7px;
-        width: (284/286)*100%;
-        border:3px solid $search-border;
+        width: (280/286)*100%;
+        border:2px solid $search-border;
         height: 31px;
-        padding-left:10px;
+        margin-bottom:7px;
         clear: both;  
         @include radius(8px);
         
         #searchInput{ 
             border: 0;
             width: (231/284)*100%;
+            margin-left:5px;
+            padding-left:5px;
             height: 31px; 
             clear: both; 
             font: $search-font; 
             color: $search-text-color;
-            
             outline: none;
         }
         
         #searchBtnBox{
-            border: 1px solid #aaa; 
-            @include radius(8px);
+            @include radius(5px);
             position: absolute; 
-            right: ( (48) / 1460 ) * 100%; 
-            top: 70px; 
+            right: -1px; 
+            top: 0px; 
             background: #aaa;
-            width: 25px; 
-            height: 21px; 
-            background: url($sprite-path) 
-            no-repeat -5px -25px;
+            width: 24px; 
+            height: 21px;
+            padding:5px 13px;
             display: block;
+            cursor: pointer;
+            
+            em{
+                display:block;
+                border:0;
+                width:25px;
+                height:21px;
+                background: url($sprite-path) 
+                no-repeat -5px -25px;
+                
+            }
         }
+    }
+    /* 下拉列表 */
+    #searchlist{
+        overflow: hidden;
+        width:100%;
+        margin-top:15px;
+        
+        #kindlist, #timelist, #release{
+            padding:0 8px;
+            float:left;
+            height:23px;
+            font:$list-font;
+            border:2px dashed $list-border;
+            @include radius(8px);
+            margin-right:4px;
+            cursor:pointer;
+            
+            em{
+                display:inline-block;
+                width:12px;
+                height:9px;
+                background:url($sprite-path) 
+                    no-repeat -30px -25px;
+            }
+        }
+        
+        #release{
+            float:right;
+            
+            span{
+                border-bottom: 1px solid $list-border;
+            }
+            
+            em{
+                display:inline-block;
+                width:22px;
+                height:22px;
+                background:url($sprite-path)
+                    no-repeat -42px -25px;
+            }
+        }
+    }
+   
+    /* 启事内容 */
+    #contentlist{
+        margin-top:6px;
+        overflow:hidden;
+        width:100%;
+        
+        .notice{
+            width:100%;
+            background:$main-bg;
+            margin:6px auto;
+            @include radius(3px);
+            
+            .notice-wrap{
+                width:(280/292)*100%;
+                margin:0 auto;
+                overflow:hidden;
+                
+                .notice-head{
+                    overflow:hidden;
+                    width:100%;
+                    padding:7px 0 6px;
+                    
+                    h3{
+                        font:$thing-font;
+                        color:$thing-text-color;
+                        float:left;
+                        overflow:hidden;
+                        
+                        em{
+                            display:inline-block;
+                            margin-right:2px;
+                            width:23px;
+                            height:22px;
+                            background:url($sprite-path) 
+                                no-repeat -5px -46px;
+                        }
+                    }
+                    
+                    .notice-note{
+                        float:right;
+                        
+                        .notice-kind{
+                            padding-right:12px;
+                            font:$notice-kind-font;
+                            color:$notice-kind;
+                        }
+                        
+                        .notice-time{
+                            color:$note-color;
+                            font:$date-font;
+                        }
+                    }
+                }
+
+                p{
+                    padding:0 18px 0 26px;
+                    font:$main-font;
+                    color:$main-text-color;
+                }
+                
+                ul{
+                    display:block;
+                    float:right;
+                    overflow:hidden;
+                    margin:7px 0;
+                    
+                    li{
+                        float:left;
+                    }
+                    
+                   .tel, .address{
+                        font:$phone-font;
+                        color:$note-color;
+                        border-right:1px solid #939393;
+                        padding:0 5px;
+                        
+                        em{
+                            display:inline-block;
+                            width:20px;
+                            height:20px;
+                        }
+                    }
+                    
+                    .tel em{
+                        background:url($sprite-path) 
+                                no-repeat -28px -47px;
+                    }
+                    .address em{
+                        background:url($sprite-path)
+                            no-repeat -47px -47px;
+                    }
+                    
+                    .weibo{
+                        background:url($sprite-path)
+                            no-repeat -68px -47px;
+                        width:20px;
+                        height:20px;
+                        margin-left:7px;
+                    }
+                }
+
+            }
+            
+            
+        }
+        
+        hr{
+            width:100%;
+            height:1px;
+            border:0;
+            background:#fff;
+        }
+        
+        #load{
+            display:block;
+            height:28px;
+            padding:0 3px;
+            background:main-bg;
+            border:2px dashed $load-border;
+            font:$load-font;
+            @include radius(8px);
+            margin:7px auto;
+        }
+    }
+}
+
+/* =footer
+ ----------------------------------------------------------*/
+#footer{
+    margin-top:60px;
+    text-align:center;
+    font:$friendlink-font;
+    
+    #friendlink{
+        color:$footer-text-color;
+    }
+    a{
+        text-decoration:none;
+        font:$friendlink-font;
+        margin-right:4px;
+        color:$footer-text-color;
+        border-bottom:1px solid $footer-text-color;
+    }
+    .rightnone{
+        border-right:none;
+    }
+    
+    #copyright{
+        font:$copyright-font;
+        color:$footer-text-color;
     }
 }
