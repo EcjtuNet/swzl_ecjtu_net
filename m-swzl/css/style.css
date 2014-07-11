@@ -14,6 +14,11 @@
 /* 物品名称 */
 /* tel,url,adress,date */
 /* 物品类别 */
+/* 二级列表边框 */
+/* 二级列表背景 */
+/* 二级列表文字 */
+/* 二级选中文字 */
+/* 联系弹出框 */
 /* 布局
  ----------------------------------------------------------*/
 /* 字体
@@ -211,7 +216,7 @@ em {
   /* 搜索框 */
   /* 下拉列表 */
   /* 启事内容 */ }
-  .main-wrap #findbtn, .main-wrap #lostbtn {
+  .main-wrap .noticekind-btn {
     width: 82px;
     height: 26px;
     font: 18px/26px "Microsoft YaHei", "微软雅黑", sans-serif;
@@ -271,7 +276,6 @@ em {
         height: 21px;
         background: url("../images/all.jpg") no-repeat -5px -25px; }
   .main-wrap #searchlist {
-    overflow: hidden;
     width: 100%;
     margin-top: 15px; }
     .main-wrap #searchlist #kindlist, .main-wrap #searchlist #timelist, .main-wrap #searchlist #release {
@@ -285,12 +289,39 @@ em {
       -moz-border-radius: 8px;
       -ms-border-radius: 8px;
       margin-right: 4px;
-      cursor: pointer; }
+      cursor: pointer;
+      position: relative; }
       .main-wrap #searchlist #kindlist em, .main-wrap #searchlist #timelist em, .main-wrap #searchlist #release em {
         display: inline-block;
         width: 12px;
         height: 9px;
         background: url("../images/all.jpg") no-repeat -30px -25px; }
+    .main-wrap #searchlist #kindlist ul, .main-wrap #searchlist #timelist ul {
+      position: absolute;
+      z-index: 1;
+      display: none;
+      width: 130px;
+      overflow: hidden;
+      padding: 5px 0;
+      background: #f4f4f4;
+      opacity: 0.9;
+      border: 2px solid #1c7bd8;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px; }
+      .main-wrap #searchlist #kindlist ul li, .main-wrap #searchlist #timelist ul li {
+        float: left;
+        text-align: center;
+        width: 56px;
+        margin: 0 4px; }
+        .main-wrap #searchlist #kindlist ul li a, .main-wrap #searchlist #timelist ul li a {
+          text-decoration: none;
+          font: 11px/1.5 "Microsoft YaHei", "微软雅黑", sans-serif; }
+      .main-wrap #searchlist #kindlist ul .sec-ac, .main-wrap #searchlist #timelist ul .sec-ac {
+        background: black; }
+        .main-wrap #searchlist #kindlist ul .sec-ac a, .main-wrap #searchlist #timelist ul .sec-ac a {
+          color: white; }
     .main-wrap #searchlist #release {
       float: right; }
       .main-wrap #searchlist #release span {
@@ -311,7 +342,30 @@ em {
       border-radius: 3px;
       -webkit-border-radius: 3px;
       -moz-border-radius: 3px;
-      -ms-border-radius: 3px; }
+      -ms-border-radius: 3px;
+      position: relative; }
+      .main-wrap #contentlist .notice .telshow {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        background: black;
+        opacity: 0.88;
+        font: 16px/1.5 "NSimSuns", "新宋体" ， sans-serif;
+        color: white;
+        padding: 22px 0 20px;
+        text-align: center; }
+        .main-wrap #contentlist .notice .telshow .close {
+          position: absolute;
+          top: 0;
+          right: 0;
+          font: 16px/1.5 "Microsoft YaHei", "微软雅黑", sans-serif;
+          width: 30px; }
       .main-wrap #contentlist .notice .notice-wrap {
         width: 95.89041%;
         margin: 0 auto;

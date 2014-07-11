@@ -6,15 +6,14 @@
     <title>日新失物招领</title>
     <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
     <div id="content">
         <div class="main">
             <div class="main-wrap">
             
                 <div>
-                    <h2 id="findbtn" class="active">寻物启事</h2>
-                    <h2 id="lostbtn">招领启事</h2>
+                    <h2 class="noticekind-btn active">寻物启事</h2>
+                    <h2 class="noticekind-btn">招领启事</h2>
                     <div id="search">
                         <input type="text" id="searchInput" value="搜索您丢失或捡到的物品"/>
                         <span id="searchBtnBox"><em></em></span>
@@ -22,8 +21,27 @@
                 </div>
                 
                 <div id="searchlist">
-                    <div id="kindlist">按分类<em></em></div>
-                    <div id="timelist">按时间<em></em></div>
+                    <div id="kindlist">
+                        按分类<em></em>
+                        <ul>
+                            <li class="sec-ac"><a href="javascript:void;">物品类别</a></li>
+                            <li><a href="javascript:void;">物品类别</a></li>
+                            <li><a href="javascript:void;">物品类别</a></li>
+                            <li><a href="javascript:void;">物品类别</a></li>
+                            <li><a href="javascript:void;">物品类别</a></li>
+                            <li><a href="javascript:void;">物品类别</a></li>
+                        </ul>
+                    </div>
+                    <div id="timelist">按时间<em></em>
+                        <ul>
+                            <li class="sec-ac"><a href="javascript:void;">物品类别</a></li>
+                            <li><a href="javascript:void;">物品类别</a></li>
+                            <li><a href="javascript:void;">物品类别</a></li>
+                            <li><a href="javascript:void;">物品类别</a></li>
+                            <li><a href="javascript:void;">物品类别</a></li>
+                            <li><a href="javascript:void;">物品类别</a></li>
+                        </ul>
+                    </div>
                     <div id="release"><span>发布</span><em></em></div>
                 </div>
                 
@@ -47,6 +65,11 @@
                                     <li class="weibo"></li>
                                 </ul>
                             </div>
+                            <div class="telshow">
+                            	<p>联系人：<span>某某某</span></p>
+                            	<p>联系电话：<span>187xxxxxxxx</span></p>
+                                <em class="close">x</em>
+                            </div>
                         </li>
                         <hr />
                         
@@ -68,6 +91,11 @@
                                     <li class="weibo"></li>
                                 </ul>
                             </div>
+                            <div class="telshow">
+                            	<p>联系人：<span>某某某</span></p>
+                            	<p>联系电话：<span>187xxxxxxxx</span></p>
+                                <em class="close">x</em>
+                            </div>
                         </li>
                         <hr />
 
@@ -89,8 +117,13 @@
                                     <li class="weibo"></li>
                                 </ul>
                             </div>
+                            <div class="telshow">
+                            	<p>联系人：<span>某某某</span></p>
+                            	<p>联系电话：<span>187xxxxxxxx</span></p>
+                                <em class="close">x</em>
+                            </div>
                         </li>
-                        <hr /> 
+                        <hr />
 
                         <li class="notice">
                             <div class="notice-wrap">
@@ -109,6 +142,11 @@
                                     <li class="address"><em></em>某区xx东xxx</li>
                                     <li class="weibo"></li>
                                 </ul>
+                            </div>
+                            <div class="telshow">
+                            	<p>联系人：<span>某某某</span></p>
+                            	<p>联系电话：<span>187xxxxxxxx</span></p>
+                                <em class="close">x</em>
                             </div>
                         </li>
                         <hr />
@@ -137,5 +175,7 @@
             <div id="sitelogo"></div>
         </div>
     </header>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

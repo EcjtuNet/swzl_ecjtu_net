@@ -32,6 +32,13 @@ $notice-kind :          #474747;              /* 物品类别 */
 $load-text :            #717171;
 $load-border :          #0562bc;
 $footer-text-color :    #467593;
+$seclist-border :       #1c7bd8;          /* 二级列表边框 */
+$seclist-bg :           #f4f4f4;          /* 二级列表背景 */
+$seclist-text :         #1c7bd8;          /* 二级列表文字 */
+$ac-seclist-text :      #fff;             /* 二级选中文字 */
+$ac-seclist-bg :        #000;
+$telshow-bg :           #000;               /* 联系弹出框 */
+$telshow-text :         #fff;
 
 
 /* 布局
@@ -68,6 +75,10 @@ $friendlink-font :      6px/1.5 "Microsoft YaHei",
                             "微软雅黑", sans-serif;
 $copyright-font :       6px/1.5 "Microsoft YaHei",
                             "微软雅黑", sans-serif;
+$seclist-font :         11px/1.5 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$telshow-font :         16px/1.5 "NSimSuns",
+                            "新宋体"， sans-serif;
 
 
 /* 路径
@@ -146,7 +157,7 @@ em{
     height: 700px;
 
     /* 寻物招领按钮 */
-    #findbtn, #lostbtn{ 
+    .noticekind-btn{ 
         width: 82px; 
         height: $btn-height; 
         font: $btn-font;
@@ -211,7 +222,6 @@ em{
     }
     /* 下拉列表 */
     #searchlist{
-        overflow: hidden;
         width:100%;
         margin-top:15px;
         
@@ -224,6 +234,7 @@ em{
             @include radius(8px);
             margin-right:4px;
             cursor:pointer;
+            position:relative;
             
             em{
                 display:inline-block;
@@ -231,6 +242,38 @@ em{
                 height:9px;
                 background:url($sprite-path) 
                     no-repeat -30px -25px;
+            }
+        }
+        
+        #kindlist ul, #timelist ul{
+            position:absolute;
+            z-index:1;
+            display:none;
+            width:130px;
+            overflow:hidden;
+            padding:5px 0;
+            background:$seclist-bg;
+            opacity:0.9;
+            border:2px solid $seclist-border;
+            @include radius(3px);
+            
+            li{
+                float:left;
+                text-align:center;
+                width:56px;
+                margin:0 4px;
+                
+                a{
+                    text-decoration:none;
+                    font:$seclist-font;
+                }
+            }
+            .sec-ac{
+                background:$ac-seclist-bg;
+                
+                a{
+                    color:$ac-seclist-text;
+                }
             }
         }
         
@@ -262,6 +305,31 @@ em{
             background:$main-bg;
             margin:6px auto;
             @include radius(3px);
+            position:relative;
+            
+            .telshow{
+                display:none;
+                position:absolute;
+                left:0;
+                top:0;
+                width:100%;
+                @include radius(3px);
+                background:$telshow-bg;
+                opacity:0.88;
+                font:$telshow-font;
+                color:$telshow-text;
+                padding:22px 0 20px;
+                text-align:center;
+                
+                .close{
+                    position:absolute;
+                    top:0;
+                    right:0;
+                    font:16px/1.5 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+                    width:30px;
+                }
+            }
             
             .notice-wrap{
                 width:(280/292)*100%;
