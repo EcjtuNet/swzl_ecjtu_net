@@ -47,15 +47,22 @@ class Baseinfo {
 		if ($args) {
 			$sql .= ' WHERE ';
 		}
+		$and_flag = False;
 		if (isset($args['key'])) {
 			$key = $args['key'];
 			$sql .= " name LIKE %$key%";
+			$and_flag = True;
 		}
 		if (isset($args['after'])) {
+			if($and_flag)
+				$sql .= " AND ";
 			$time = strtotime($args['after']);
 			$sql .= " time>$time ";
+			$and_flag = True;
 		}
 		if (isset($args['category'])) {
+			if($and_flag)
+				$sql .= " AND ";
 			$sql .= " category = " . $args['category'];
 		}
 		$page = intval($page);
@@ -174,6 +181,7 @@ $app->get('/lost', function () use ($app) {
 		$get[$key] = strip_tags($value);
 	}
 	$lost = new Lost();
+	$page = isset($get['page']) ? $get['page'] : 1;
 	echo $lost->find($get, $page, $config['count_per_page']);
 	return true;
 });
@@ -184,6 +192,7 @@ $app->get('/found', function () use ($app) {
 		$get[$key] = strip_tags($value);
 	}
 	$found = new found();
+	$page = isset($get['page']) ? $get['page'] : 1
 	echo $found->find($get, $page, $config['count_per_page']);
 	return true;
 });
