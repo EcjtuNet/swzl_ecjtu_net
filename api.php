@@ -50,7 +50,7 @@ class Baseinfo {
 		$and_flag = False;
 		if (isset($args['key'])) {
 			$key = $args['key'];
-			$sql .= " name LIKE %$key%";
+			$sql .= " name LIKE BINARY '%$key%'";
 			$and_flag = True;
 		}
 		if (isset($args['after'])) {
@@ -184,7 +184,7 @@ $app->get('/lost', function () use ($app) {
 	}
 	$lost = new Lost();
 	$page = isset($get['page']) ? $get['page'] : 1;
-	echo $lost->find($get, $page, $config['count_per_page']);
+	echo $lost->find($get, $page, count_per_page);
 	return true;
 });
 
@@ -195,7 +195,7 @@ $app->get('/found', function () use ($app) {
 	}
 	$found = new found();
 	$page = isset($get['page']) ? $get['page'] : 1;
-	echo $found->find($get, $page, $config['count_per_page']);
+	echo $found->find($get, $page, count_per_page);
 	return true;
 });
 
