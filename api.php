@@ -50,7 +50,7 @@ class Baseinfo {
 		$and_flag = False;
 		if (isset($args['key'])) {
 			$key = $args['key'];
-			$sql .= " name LIKE BINARY '%$key%'";
+			$sql .= " name LIKE '%$key%'";
 			$and_flag = True;
 		}
 		if (isset($args['after'])) {
