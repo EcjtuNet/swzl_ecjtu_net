@@ -71,7 +71,7 @@ class Baseinfo {
 		$count = intval($count);
 		$begin = ($page-1) * $count;
 		if ($page>0 && $count>0) {
-			$sql .= " LIMIT $begin,$count ORDER BY time DESC";
+			$sql .= " ORDER BY time DESC LIMIT $begin,$count ";
 			$result = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 			if (!$result) {
 				$this->output_msg = 'Cannot find';
