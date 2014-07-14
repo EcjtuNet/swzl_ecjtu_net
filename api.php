@@ -54,15 +54,17 @@ class Baseinfo {
 			$and_flag = True;
 		}
 		if (isset($args['after'])) {
-			if($and_flag)
+			if($and_flag){
 				$sql .= " AND ";
+			}
 			$time = strtotime($args['after']);
 			$sql .= " time>$time ";
 			$and_flag = True;
 		}
 		if (isset($args['category'])) {
-			if($and_flag)
+			if($and_flag){
 				$sql .= " AND ";
+			}
 			$sql .= " category = " . $args['category'];
 		}
 		$page = intval($page);
@@ -192,7 +194,7 @@ $app->get('/found', function () use ($app) {
 		$get[$key] = strip_tags($value);
 	}
 	$found = new found();
-	$page = isset($get['page']) ? $get['page'] : 1
+	$page = isset($get['page']) ? $get['page'] : 1;
 	echo $found->find($get, $page, $config['count_per_page']);
 	return true;
 });
