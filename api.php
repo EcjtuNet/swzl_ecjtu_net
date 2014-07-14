@@ -6,6 +6,7 @@ class Baseinfo {
 	function __construct($arg=False){
 		try {
 			$this->db = new PDO('mysql:dbname=swzl_ecjtu_net;host=127.0.0.1', 'swzl_ecjtu_net', 'EcjtuNetSwzl_17#409');
+			$this->db->query('set names utf8;');
 		}catch (PDOException $e) {
 		    $this->output_msg = 'Database error';
 		}
