@@ -75,6 +75,8 @@ $( document ).ready( function () {
                     .addClass( 'active' );
                 type = $( this ).data( 'id' );
             }
+            url = 'http://swzl.ecjtu.net/api.php/' + type + '/1';
+            show( url );
         } );
         
         //搜索框聚失焦
@@ -94,7 +96,8 @@ $( document ).ready( function () {
             page = 1;
             searchType = 'normal';
             url = 'http://swzl.ecjtu.net/api.php/' + type.slice(0, type.length-1)
-                + '&key=' + $( this ).prev().val();
+                + '?key=' + $( this ).prev().val();
+            contentlist.find( 'ul' ).html( '' );
             show( url );
         } );
         
@@ -112,6 +115,7 @@ $( document ).ready( function () {
                 type.slice(0, type.length-1) + '?' +
                 searchType + '=' +
                 $( this ).data( 'id' );
+            contentlist.find( 'ul' ).html( '' );
             show( url );
         } );
         //时间
@@ -121,6 +125,7 @@ $( document ).ready( function () {
             url = 'http://swzl.ecjtu.net/api.php/' +
                 type.slice(0, type.length-1) + '?' +
                 searchType + '=' + dateHandle( $(this).data( 'days' ) * 1 );
+            contentlist.find( 'ul' ).html( '' );
             show( url );
         } );
         
