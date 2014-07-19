@@ -64,7 +64,7 @@ $( document ).ready( function () {
             }, 'json' );
 
         };
-        show('/test');
+        show();
         
         //搜索启事切换
         noticekindBtn.click( function () {
@@ -76,6 +76,7 @@ $( document ).ready( function () {
                 type = $( this ).data( 'id' );
             }
             url = 'http://swzl.ecjtu.net/api.php/' + type + '/1';
+            contentlist.find( 'ul' ).html( '' );
             show( url );
         } );
         
@@ -95,10 +96,13 @@ $( document ).ready( function () {
         $( '#searchBtnBox' ).click( function () {
             page = 1;
             searchType = 'normal';
-            url = 'http://swzl.ecjtu.net/api.php/' + type.slice(0, type.length-1)
-                + '?key=' + $( this ).prev().val();
-            contentlist.find( 'ul' ).html( '' );
-            show( url );
+            var value = $( this ).prev().val();
+            if ( value !== '搜索您丢失或捡到的物品' || value ) {
+                url = 'http://swzl.ecjtu.net/api.php/' + type.slice(0, type.length-1)
+                    + '?key=' + $( this ).prev().val();
+                contentlist.find( 'ul' ).html( '' );
+                show( url);
+            } 
         } );
         
         //分类查询按钮事件
@@ -186,8 +190,9 @@ $( document ).ready( function () {
             } );
             if ( !temp ) {
                 event.preventDefault();
+            } else {
+                window.location.reload();
             }
-            
         } );
         //返回发布按钮事件
         $('#backbtn').click( function () {
@@ -204,7 +209,7 @@ $( document ).ready( function () {
                     + '&page=' + page : 
                     url += '&page=' + page;
             }
-            show( '/test' );
+            show( url );
         } );
         
         //Dom重画部分
