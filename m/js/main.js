@@ -12,10 +12,10 @@ $( document ).ready( function () {
         ,   inputKind = $( '#input-kind' )
         ,   inputType = $( '#input-type' )
         ,   tellyou = '请认真点好嘛！！！'
-        ,   type = 'losts'
+        ,   type = 'losts'   //搜索类别：losts, founds, 用于url拼接
         ,   page = 1
         ,   url = 'http://swzl.ecjtu.net/api.php/losts/1'
-        ,   searchType = 'normal';
+        ,   searchType = 'normal';   //搜索模式:normal, key, category, time, 用于加载更多时判断
         
         //toggle show
         var togShow = function ( obj ) {
@@ -40,7 +40,7 @@ $( document ).ready( function () {
         var show = function ( urlnew ) {
             var url = urlnew ||'http://swzl.ecjtu.net/api.php/losts/1';
             $.get( url, function ( data, status ) {
-                if (data !== 'Cannot find') {
+                if ( data.count ) {
                     var count = data.count
                     ,   list  = data.list
                     ,   i = 0;
@@ -75,6 +75,8 @@ $( document ).ready( function () {
                     .addClass( 'active' );
                 type = $( this ).data( 'id' );
             }
+            page = 1;
+            searchType = 'normal';
             url = 'http://swzl.ecjtu.net/api.php/' + type + '/1';
             contentlist.find( 'ul' ).html( '' );
             show( url );
@@ -94,10 +96,10 @@ $( document ).ready( function () {
         } );
         //搜索按钮请求
         $( '#searchBtnBox' ).click( function () {
-            page = 1;
-            searchType = 'normal';
             var value = $( this ).prev().val();
             if ( value !== '搜索您丢失或捡到的物品' || value ) {
+                page = 1;
+                searchType = 'key';
                 url = 'http://swzl.ecjtu.net/api.php/' + type.slice(0, type.length-1)
                     + '?key=' + $( this ).prev().val();
                 contentlist.find( 'ul' ).html( '' );
@@ -113,6 +115,10 @@ $( document ).ready( function () {
         //分类查询选项事件
         //类别
         kindlist.find( 'ul li' ).click( function () {
+            $( this ).siblings( '.sec-ac' )
+                .removeClass( 'sec-ac' )
+            .end()
+                .addClass( 'sec-ac' );
             page = 1;
             searchType = $( this ).parent().data( 'type' );
             url = 'http://swzl.ecjtu.net/api.php/' +
@@ -124,6 +130,10 @@ $( document ).ready( function () {
         } );
         //时间
         timelist.find( 'ul li' ).click( function () {
+            $( this ).siblings( '.sec-ac' )
+                .removeClass( 'sec-ac' )
+            .end()
+                .addClass( 'sec-ac' );
             page = 1;
             searchType = $( this ).parent().data( 'type' );
             url = 'http://swzl.ecjtu.net/api.php/' +
@@ -191,6 +201,8 @@ $( document ).ready( function () {
             if ( !temp ) {
                 event.preventDefault();
             } else {
+               var formType = inputKind.val() === '招领启事' ? 'found' : 'lost'
+                $( 'form' ).attr( 'action', 'http://swzl.ecjtu.net/' + formType );
                 window.location.reload();
             }
         } );
