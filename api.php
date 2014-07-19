@@ -75,7 +75,10 @@ class Baseinfo {
 			$sql .= " ORDER BY time DESC LIMIT $begin,$count ";
 			$result = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 			if (!$result) {
-				$this->output_msg = 'Cannot find';
+				$this->output_msg = json_encode(array(
+						'count' => 0,
+						'list' => array()
+					));
 			}else{
 				foreach ($result as $key => $value) {
 					$result[$key]['id'] = $result[$key][$this->id];
