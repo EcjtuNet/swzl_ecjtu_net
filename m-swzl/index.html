@@ -12,8 +12,8 @@
             <div class="main-wrap">
             
                 <div>
-                    <h2 class="noticekind-btn active">寻物启事</h2>
-                    <h2 class="noticekind-btn">招领启事</h2>
+                    <h2 class="noticekind-btn active" data-id="losts">寻物启事</h2>
+                    <h2 class="noticekind-btn" data-id="founds">招领启事</h2>
                     <div id="search">
                         <input type="text" id="searchInput" value="搜索您丢失或捡到的物品"/>
                         <span id="searchBtnBox"><em></em></span>
@@ -23,23 +23,21 @@
                 <div id="searchlist">
                     <div id="kindlist">
                         按分类<em></em>
-                        <ul>
-                            <li class="sec-ac"><a href="javascript:void;">物品类别</a></li>
-                            <li><a href="javascript:void;">物品类别</a></li>
-                            <li><a href="javascript:void;">物品类别</a></li>
-                            <li><a href="javascript:void;">物品类别</a></li>
-                            <li><a href="javascript:void;">物品类别</a></li>
-                            <li><a href="javascript:void;">物品类别</a></li>
+                        <ul data-type="category">
+                            <li class="sec-ac" data-id="1"><a href="javascript:void;">卡类证件</a></li>
+                            <li data-id="2"><a href="javascript:void;">随身用品</a></li>
+                            <li data-id="3"><a href="javascript:void;">电子数码</a></li>
+                            <li data-id="4"><a href="javascript:void;">书籍资料</a></li>
+                            <li data-id="5"><a href="javascript:void;">衣物饰品</a></li>
+                            <li data-id="6"><a href="javascript:void;">其他物品</a></li>
                         </ul>
                     </div>
                     <div id="timelist">按时间<em></em>
-                        <ul>
-                            <li class="sec-ac"><a href="javascript:void;">物品类别</a></li>
-                            <li><a href="javascript:void;">物品类别</a></li>
-                            <li><a href="javascript:void;">物品类别</a></li>
-                            <li><a href="javascript:void;">物品类别</a></li>
-                            <li><a href="javascript:void;">物品类别</a></li>
-                            <li><a href="javascript:void;">物品类别</a></li>
+                        <ul data-type="after">
+                            <li class="sec-ac" data-days="1"><a href="javascript:void;">当天</a></li>
+                            <li data-days="3"><a href="javascript:void;">近三天</a></li>
+                            <li data-days="7"><a href="javascript:void;">近一周</a></li>
+                            <li data-days="30"><a href="javascript:void;">近一个月</a></li>
                         </ul>
                     </div>
                     <div id="release"><span>发布</span><em></em></div>
@@ -47,114 +45,68 @@
                 
                 <div id="contentlist">
                     <ul>
-                        <li class="notice">
-                            <div class="notice-wrap">
-                                <div class="notice-head">
-                                    <h3><em></em>启事标题</h3>
-                                    <div class="notice-note">
-                                        <span class="notice-kind">物品类别</span>
-                                        <span class="notice-time">发布时间</span>
-                                    </div>
-                                </div>
-                                <p>启事内容启事内容启事内容启事内容启事内容启
-                                事内容启事内容启事内容启事内容启事内容
-                                </p>
-                                <ul>
-                                    <li class="tel"><em></em>联系他</li>
-                                    <li class="address"><em></em>某区xx东xxx</li>
-                                    <li class="weibo"></li>
-                                </ul>
-                            </div>
-                            <div class="telshow">
-                            	<p>联系人：<span>某某某</span></p>
-                            	<p>联系电话：<span>187xxxxxxxx</span></p>
-                                <em class="close">x</em>
-                            </div>
-                        </li>
-                        <hr />
-                        
-                        <li class="notice">
-                            <div class="notice-wrap">
-                                <div class="notice-head">
-                                    <h3><em></em>启事标题</h3>
-                                    <div class="notice-note">
-                                        <span class="notice-kind">物品类别</span>
-                                        <span class="notice-time">发布时间</span>
-                                    </div>
-                                </div>
-                                <p>启事内容启事内容启事内容启事内容启事内容启
-                                事内容启事内容启事内容启事内容启事内容
-                                </p>
-                                <ul>
-                                    <li class="tel"><em></em>联系他</li>
-                                    <li class="address"><em></em>某区xx东xxx</li>
-                                    <li class="weibo"></li>
-                                </ul>
-                            </div>
-                            <div class="telshow">
-                            	<p>联系人：<span>某某某</span></p>
-                            	<p>联系电话：<span>187xxxxxxxx</span></p>
-                                <em class="close">x</em>
-                            </div>
-                        </li>
-                        <hr />
-
-                        <li class="notice">
-                            <div class="notice-wrap">
-                                <div class="notice-head">
-                                    <h3><em></em>启事标题</h3>
-                                    <div class="notice-note">
-                                        <span class="notice-kind">物品类别</span>
-                                        <span class="notice-time">发布时间</span>
-                                    </div>
-                                </div>
-                                <p>启事内容启事内容启事内容启事内容启事内容启
-                                事内容启事内容启事内容启事内容启事内容
-                                </p>
-                                <ul>
-                                    <li class="tel"><em></em>联系他</li>
-                                    <li class="address"><em></em>某区xx东xxx</li>
-                                    <li class="weibo"></li>
-                                </ul>
-                            </div>
-                            <div class="telshow">
-                            	<p>联系人：<span>某某某</span></p>
-                            	<p>联系电话：<span>187xxxxxxxx</span></p>
-                                <em class="close">x</em>
-                            </div>
-                        </li>
-                        <hr />
-
-                        <li class="notice">
-                            <div class="notice-wrap">
-                                <div class="notice-head">
-                                    <h3><em></em>启事标题</h3>
-                                    <div class="notice-note">
-                                        <span class="notice-kind">物品类别</span>
-                                        <span class="notice-time">发布时间</span>
-                                    </div>
-                                </div>
-                                <p>启事内容启事内容启事内容启事内容启事内容启
-                                事内容启事内容启事内容启事内容启事内容
-                                </p>
-                                <ul>
-                                    <li class="tel"><em></em>联系他</li>
-                                    <li class="address"><em></em>某区xx东xxx</li>
-                                    <li class="weibo"></li>
-                                </ul>
-                            </div>
-                            <div class="telshow">
-                            	<p>联系人：<span>某某某</span></p>
-                            	<p>联系电话：<span>187xxxxxxxx</span></p>
-                                <em class="close">x</em>
-                            </div>
-                        </li>
-                        <hr />
-                   </ul>
-                   
+                    </ul>
                    <button id="load">戳我玩命加载~</button>
                    <hr />
-                   
+                </div>
+                
+                <div id="releaseshow">
+                    <em id="down"></em>
+                	<form action="http://swzl.ecjtu.net/post" method="post" accept-charset="utf-8">
+                        <ul>
+                            <li>
+                                <label for="input-kind"><em>*</em>启事内容：</label>
+                                <input type="text" class="need" id="input-kind" value="招领启事"/>
+                                <button class="relea-seclist-btn"><em></em></button>
+                                <ul class="relea-seclist">
+                                	<li class="relea-active">招领启事<em></em></li>
+                                	<li>寻物启事<em></em></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <label for="input-name"><em>*</em>物品名称：</label>
+                                <input type="text" id="input-name" class="need"/>
+                            </li>
+                            <li>
+                                <label for="input-type"><em>*</em>物品类型：</label>
+                                <input type="text" class="need" id="input-type" value="物品类别1"/>
+                                <button class="relea-seclist-btn"><em></em></button>
+                                <ul class="relea-seclist">
+                                	<li class="relea-active">卡类证件<em></em></li>
+                                	<li>随身用品<em></em></li>
+                                	<li>电子数码<em></em></li>
+                                	<li>书籍资料<em></em></li>
+                                	<li>衣物饰品<em></em></li>
+                                	<li>其他物品<em></em></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <label for="input-address">&nbsp;&nbsp;地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点：</label>
+                                <input type="text" id="input-address"/>
+                            </li>
+                            <li>
+                                <label for="input-time">&nbsp;&nbsp;时&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间：</label>
+                                <input type="text" id="input-time"/>
+                            </li>
+                            <li>
+                                <label for="input-who"><em>*</em>&nbsp;姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
+                                <input type="text" class="need" id="input-who"/>                        
+                            </li>
+                            <li>
+                                <label for="input-tel"><em>*</em>手机号码：</label>
+                                <input type="text" class="need" id="input-tel"/>
+                            </li>
+                            <li>
+                                <label for="input-note"><em>*</em>详细描述：</label>
+                                <input type="text" class="need" id="inputnote"/>
+                            </li>
+                        </ul>
+                        <div id="btngroup">
+                            <input type="submit" value="发布" id="releasebtn"/>
+                            
+                            <button id="backbtn">返回</button>
+                        </div>
+                    </form>
                 </div>
                 
             </div>
@@ -176,6 +128,40 @@
         </div>
     </header>
     <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/mustache.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/template" id="template">
+        <li class="notice">
+            <div class="notice-wrap">
+                <div class="notice-head">
+                    <h3><em></em>{{ name }}</h3>
+                    <div class="notice-note">
+                        <span class="notice-kind">{{ cname }}</span>
+                        {{#time}}
+                        <span class="notice-time">{{ time }}</span>
+                        {{/time}}
+                    </div>
+                </div>
+                <p> {{ description }}</p>
+                <ul>
+                    <li class="tel"><em></em>联系他</li>
+                    {{#place}}
+                    <li class="address"><em></em>{{ place }}</li>
+                    {{/place}}
+                    <li class="weibo"></li>
+                </ul>
+            </div>
+            <div class="telshow">
+            {{#owner}}
+                <p>联系人：<span>{{ owner }}</span></p>
+            {{/owner}}
+            {{#phone}}
+                <p>联系电话：<span>{{ phone }}</span></p>
+            {{/phone}}
+                <em class="close">x</em>
+            </div>
+        </li>
+        <hr />
+    </script>
 </body>
 </html>

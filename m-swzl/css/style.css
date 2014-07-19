@@ -8,6 +8,8 @@
  *@last-time        2014.7.9
  *
  */
+/* 文件载入
+ ----------------------------------------------------------*/
 /* 配色
  ----------------------------------------------------------*/
 /* 页面底色 */
@@ -19,14 +21,16 @@
 /* 二级列表文字 */
 /* 二级选中文字 */
 /* 联系弹出框 */
+/* 发布框背景 */
+/* 发布框文字 */
+/* 发布框二级列表 */
 /* 布局
  ----------------------------------------------------------*/
 /* 字体
  ----------------------------------------------------------*/
 /* 路径
  ----------------------------------------------------------*/
-/* 文件载入
- ----------------------------------------------------------*/
+/*  data file  */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -124,6 +128,8 @@ table {
 /*  css reset  */
 /* 圆角
  --------------------------------------------------*/
+/* user-select
+ --------------------------------------------------*/
 /*  混入文件  */
 * {
   margin: 0;
@@ -210,7 +216,7 @@ em {
 .main-wrap {
   padding-top: 5px;
   overflow: hidden;
-  height: 700px;
+  position: relative;
   /* 寻物招领按钮 */
   /* 寻物招领按钮active */
   /* 搜索框 */
@@ -277,7 +283,8 @@ em {
         background: url("../images/all.jpg") no-repeat -5px -25px; }
   .main-wrap #searchlist {
     width: 100%;
-    margin-top: 15px; }
+    margin-top: 15px;
+    float: left; }
     .main-wrap #searchlist #kindlist, .main-wrap #searchlist #timelist, .main-wrap #searchlist #release {
       padding: 0 8px;
       float: left;
@@ -318,6 +325,10 @@ em {
         .main-wrap #searchlist #kindlist ul li a, .main-wrap #searchlist #timelist ul li a {
           text-decoration: none;
           font: 11px/1.5 "Microsoft YaHei", "微软雅黑", sans-serif; }
+      .main-wrap #searchlist #kindlist ul li:active, .main-wrap #searchlist #timelist ul li:active {
+        background: black; }
+        .main-wrap #searchlist #kindlist ul li:active a, .main-wrap #searchlist #timelist ul li:active a {
+          color: white; }
       .main-wrap #searchlist #kindlist ul .sec-ac, .main-wrap #searchlist #timelist ul .sec-ac {
         background: black; }
         .main-wrap #searchlist #kindlist ul .sec-ac a, .main-wrap #searchlist #timelist ul .sec-ac a {
@@ -332,7 +343,7 @@ em {
         height: 22px;
         background: url("../images/all.jpg") no-repeat -42px -25px; }
   .main-wrap #contentlist {
-    margin-top: 6px;
+    margin-top: 7px;
     overflow: hidden;
     width: 100%; }
     .main-wrap #contentlist .notice {
@@ -435,11 +446,124 @@ em {
       background: main-bg;
       border: 2px dashed #0562bc;
       font: 16px/1.5 "Microsoft YaHei", "微软雅黑", sans-serif;
-      border-radius: 8px;
-      -webkit-border-radius: 8px;
-      -moz-border-radius: 8px;
-      -ms-border-radius: 8px;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
       margin: 7px auto; }
+  .main-wrap #releaseshow {
+    display: none;
+    position: absolute;
+    top: 126px;
+    left: 0;
+    width: 100%;
+    padding: 22px 0;
+    background: black;
+    opacity: 0.87;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px; }
+    .main-wrap #releaseshow #down {
+      position: absolute;
+      top: -9px;
+      right: 26px;
+      width: 18px;
+      height: 9px;
+      background: url("../images/all.jpg") no-repeat -70px -34px; }
+    .main-wrap #releaseshow li {
+      padding: 0 5px 18px 5px;
+      width: 90%;
+      margin: 0 auto;
+      position: relative; }
+      .main-wrap #releaseshow li input {
+        font: 14px/1.5 "Microsoft YaHei", "微软雅黑", sans-serif;
+        color: white;
+        float: right;
+        height: 28px;
+        width: 62%;
+        border: 1px solid #fff;
+        background: black;
+        opacity: 0.87;
+        padding-left: 6px; }
+      .main-wrap #releaseshow li #input-kind, .main-wrap #releaseshow li #input-type {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none; }
+      .main-wrap #releaseshow li .relea-seclist-btn {
+        width: 27px;
+        height: 28px;
+        background: white;
+        border: 0;
+        position: absolute;
+        top: 1px;
+        right: 5px; }
+        .main-wrap #releaseshow li .relea-seclist-btn em {
+          display: block;
+          margin: 0 auto;
+          width: 17px;
+          height: 19px;
+          background: url("../images/all.jpg") no-repeat -92px -27px; }
+      .main-wrap #releaseshow li .relea-seclist-acbtn {
+        background: #1c7bd8; }
+        .main-wrap #releaseshow li .relea-seclist-acbtn em {
+          background: url("../images/all.jpg") no-repeat -92px -46px; }
+      .main-wrap #releaseshow li .relea-seclist {
+        width: 177px;
+        height: 46;
+        border: 1px solid #fff;
+        position: absolute;
+        top: 33px;
+        right: 10px;
+        z-index: 10;
+        background: #2a2a2a;
+        opacity: 0.89;
+        display: none; }
+        .main-wrap #releaseshow li .relea-seclist li {
+          padding: 0;
+          float: left;
+          width: 74px;
+          height: 30px;
+          text-align: center;
+          font: 11px/30px "Microsoft YaHei", "微软雅黑", sans-serif;
+          color: #737373;
+          margin: 0 6px;
+          cursor: pointer; }
+        .main-wrap #releaseshow li .relea-seclist .relea-active {
+          background: #1c7bd8;
+          color: white; }
+          .main-wrap #releaseshow li .relea-seclist .relea-active em {
+            display: block;
+            width: 8px;
+            height: 12px;
+            position: relative;
+            top: -21px;
+            left: 64px;
+            background: #1c7bd8 url("../images/all.jpg") no-repeat -109px -27px; }
+    .main-wrap #releaseshow label {
+      font: 90%/1.5 "Microsoft YaHei", "微软雅黑", sans-serif;
+      color: white;
+      position: relative;
+      display: inline-block;
+      width: 30%; }
+      .main-wrap #releaseshow label em {
+        color: #ff9c00; }
+    .main-wrap #releaseshow #btngroup {
+      width: 185px;
+      margin: 0 auto; }
+      .main-wrap #releaseshow #btngroup #backbtn, .main-wrap #releaseshow #btngroup #releasebtn {
+        font: 18px/26px "Microsoft YaHei", "微软雅黑", sans-serif;
+        color: #1c7bd8;
+        background: black;
+        opacity: 0.87;
+        width: 58px;
+        height: 30px;
+        margin: 0 15px;
+        border: 2px dashed #1c7bd8;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px; }
 
 /* =footer
  ----------------------------------------------------------*/

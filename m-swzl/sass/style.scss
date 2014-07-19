@@ -9,85 +9,10 @@
  *@last-time        2014.7.9
  *
  */
- 
- 
-
-/* 配色
- ----------------------------------------------------------*/
-$page-bg :              #f4f4f4;              /* 页面底色 */
-$main-bg :              #dbdbdb;
-$main-text-color :      #000;
-$thing-text-color :     #3f9bf4;              /* 物品名称 */
-$note-color :           #fff;       /* tel,url,adress,date */
-$unac-btn-color :       #a6aaaa;
-$active-btn-color :     #3f9bf4 !important;
-$btn-border-color :     #a6aaaa;
-$search-text-color :    #a6aaaa;
-$search-border :        #a6aaaa;
-$search-btn-bg :        #a6aaaa;
-$header-bg :            blue !default;
-$header-border :        #57a5f1;
-$list-border :          #0562bc;
-$notice-kind :          #474747;              /* 物品类别 */
-$load-text :            #717171;
-$load-border :          #0562bc;
-$footer-text-color :    #467593;
-$seclist-border :       #1c7bd8;          /* 二级列表边框 */
-$seclist-bg :           #f4f4f4;          /* 二级列表背景 */
-$seclist-text :         #1c7bd8;          /* 二级列表文字 */
-$ac-seclist-text :      #fff;             /* 二级选中文字 */
-$ac-seclist-bg :        #000;
-$telshow-bg :           #000;               /* 联系弹出框 */
-$telshow-text :         #fff;
-
-
-/* 布局
- ----------------------------------------------------------*/
-$header-height :        66px;
-$main-width :           100%;
-$sub-width :            14px !default;
-$extra-width :          14px !default;
-$btn-height :           26px;
-
-/* 字体
- ----------------------------------------------------------*/
-$siteurl-font :         11px/1.0 "Microsoft YaHei",
-                            "微软雅黑", sans-serif;
-$btn-font :             18px/26px "Microsoft YaHei",
-                            "微软雅黑", sans-serif;
-$search-font :          16px "Microsoft YaHei",
-                            "微软雅黑", sans-serif;
-$list-font :            16px/22px "Microsoft YaHei",
-                            "微软雅黑", sans-serif;
-$thing-font :           14px/1.0 "Microsoft YaHei",
-                            "微软雅黑", sans-serif;
-$main-font :            11px/1.0 "Microsoft YaHei",
-                            "微软雅黑", sans-serif;
-$date-font :            11px/1.0 "Microsoft YaHei",
-                            "微软雅黑", sans-serif;
-$phone-font :           14px/1.0 "Microsoft YaHei",
-                            "微软雅黑", sans-serif;
-$notice-kind-font :     9px/1.0 "Microsoft YaHei",
-                            "微软雅黑", sans-serif;
-$load-font :            16px/1.5 "Microsoft YaHei",
-                            "微软雅黑", sans-serif;
-$friendlink-font :      6px/1.5 "Microsoft YaHei",
-                            "微软雅黑", sans-serif;
-$copyright-font :       6px/1.5 "Microsoft YaHei",
-                            "微软雅黑", sans-serif;
-$seclist-font :         11px/1.5 "Microsoft YaHei",
-                            "微软雅黑", sans-serif;
-$telshow-font :         16px/1.5 "NSimSuns",
-                            "新宋体"， sans-serif;
-
-
-/* 路径
- ----------------------------------------------------------*/
-$sprite-path :  "../images/all.jpg";
-$onepx :        "../images/onepx.png";
 
 /* 文件载入
  ----------------------------------------------------------*/
+@import  "data";                   /*  data file  */
 @import  "reset";                  /*  css reset  */
 @import  "mixin";                  /*  混入文件  */
 @import  "layout/s-m-e";           /*  布局  */
@@ -151,10 +76,10 @@ em{
 #content{
     background: $page-bg;
 }
-.main-wrap{ 
+.main-wrap{
     padding-top: 5px;
     overflow: hidden;
-    height: 700px;
+    position: relative;
 
     /* 寻物招领按钮 */
     .noticekind-btn{ 
@@ -224,6 +149,7 @@ em{
     #searchlist{
         width:100%;
         margin-top:15px;
+        float:left;
         
         #kindlist, #timelist, #release{
             padding:0 8px;
@@ -268,6 +194,14 @@ em{
                     font:$seclist-font;
                 }
             }
+            li:active{
+                background:$ac-seclist-bg;
+                
+                a{
+                    color:$ac-seclist-text;
+                }
+            }
+            
             .sec-ac{
                 background:$ac-seclist-bg;
                 
@@ -296,7 +230,7 @@ em{
    
     /* 启事内容 */
     #contentlist{
-        margin-top:6px;
+        margin-top:7px;
         overflow:hidden;
         width:100%;
         
@@ -439,8 +373,150 @@ em{
             background:main-bg;
             border:2px dashed $load-border;
             font:$load-font;
-            @include radius(8px);
+            @include radius(3px);
             margin:7px auto;
+        }
+    }
+    
+    #releaseshow{
+        display:none;
+        position:absolute;
+        top:126px;
+        left:0;
+        width:100%;
+        padding:22px 0;
+        background:$releaseshow-bg;
+        opacity:0.87;
+        @include radius(3px);
+        
+        #down{
+            position:absolute;
+            top:-9px;
+            right:26px;
+            width:18px;
+            height:9px;
+            background:url($sprite-path) 
+                no-repeat -70px -34px;
+        }
+        
+        li{
+            padding:0 5px 18px 5px;
+            width:90%;
+            margin:0 auto;
+            position:relative;
+            
+            input{
+                font:$releashow-selec-font;
+                color:$releaseshow-text;
+                float:right;
+                height:28px;
+                width:62%;
+                border:1px solid #fff;
+                background:$releaseshow-bg;
+                opacity:0.87;
+                padding-left:6px;
+            }
+            
+            #input-kind, #input-type{
+                @include user-select;
+            }
+            
+            .relea-seclist-btn{
+                width:27px;
+                height:28px;
+                background:white;
+                border:0;
+                position:absolute;
+                top:1px;
+                right:5px;
+                
+                em{
+                    display:block;
+                    margin:0 auto;
+                    width:17px;
+                    height:19px;
+                    background:url($sprite-path) no-repeat
+                        -92px -27px;
+                }
+            }
+            .relea-seclist-acbtn{
+                background:$releaseshow-blue;
+                
+                em{
+                    background:url($sprite-path) no-repeat
+                        -92px -46px;
+                }
+            }
+            
+            .relea-seclist{
+                width:177px;
+                height:46;
+                border:1px solid #fff;
+                position:absolute;
+                top:33px;
+                right:10px;
+                z-index:10;
+                background:$releaseshow-sec-bg;
+                opacity:0.89;
+                display:none;
+                
+                li{
+                    padding:0;
+                    float:left;
+                    width:74px;
+                    height:30px;
+                    text-align:center;
+                    font:$relea-seclist-font;
+                    color:$releaseshow-sectext;
+                    margin:0 6px;
+                    cursor:pointer;
+                }
+                .relea-active {
+                    background:$releaseshow-blue;
+                    color:$ac-releashow-sectxt;
+                    
+                    em{
+                        display:block;
+                        width:8px;
+                        height:12px;
+                        position:relative;
+                        top:-21px;
+                        left:64px;
+                        background:$releaseshow-blue 
+                            url($sprite-path) no-repeat
+                            -109px -27px;
+                    }
+                }
+            }
+        }
+        label{
+            font:$releashow-lab-font;
+            color:$releaseshow-text;
+            position:relative;
+            display:inline-block;
+            width:30%;
+        
+            em{
+                color:#ff9c00;
+            }
+        }
+        
+        
+        #btngroup{
+            width:185px;
+            margin:0 auto;
+            
+            #backbtn, #releasebtn{
+                font:$relea-btn-font;
+                color:$releaseshow-blue;
+                background:$releaseshow-bg;
+                opacity:0.87;
+                width:58px;
+                height:30px;
+                margin:0 15px;
+                border:2px dashed $releaseshow-blue;
+                @include radius(3px);
+            }
         }
     }
 }

@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+/* 配色
+ ----------------------------------------------------------*/
+$page-bg :              #f4f4f4;              /* 页面底色 */
+$main-bg :              #dbdbdb;
+$main-text-color :      #000;
+$thing-text-color :     #3f9bf4;              /* 物品名称 */
+$note-color :           #fff;       /* tel,url,adress,date */
+$unac-btn-color :       #a6aaaa;
+$active-btn-color :     #3f9bf4 !important;
+$btn-border-color :     #a6aaaa;
+$search-text-color :    #a6aaaa;
+$search-border :        #a6aaaa;
+$search-btn-bg :        #a6aaaa;
+$header-bg :            blue !default;
+$header-border :        #57a5f1;
+$list-border :          #0562bc;
+$notice-kind :          #474747;              /* 物品类别 */
+$load-text :            #717171;
+$load-border :          #0562bc;
+$footer-text-color :    #467593;
+$seclist-border :       #1c7bd8;          /* 二级列表边框 */
+$seclist-bg :           #f4f4f4;          /* 二级列表背景 */
+$seclist-text :         #1c7bd8;          /* 二级列表文字 */
+$ac-seclist-text :      #fff;             /* 二级选中文字 */
+$ac-seclist-bg :        #000;
+$telshow-bg :           #000;               /* 联系弹出框 */
+$telshow-text :         #fff;
+$releaseshow-bg :       #000;               /* 发布框背景 */
+$releaseshow-text :     #fff;               /* 发布框文字 */
+$releaseshow-blue :     #1c7bd8;
+$releaseshow-sectext :  #737373;        /* 发布框二级列表 */
+$ac-releashow-sectxt :  #fff;
+$releaseshow-sec-bg :   #2a2a2a;        
+
+/* 布局
+ ----------------------------------------------------------*/
+$header-height :        66px;
+$main-width :           100%;
+$sub-width :            14px !default;
+$extra-width :          14px !default;
+$btn-height :           26px;
+
+/* 字体
+ ----------------------------------------------------------*/
+$siteurl-font :         11px/1.0 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$btn-font :             18px/26px "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$search-font :          16px "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$list-font :            16px/22px "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$thing-font :           14px/1.0 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$main-font :            11px/1.0 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$date-font :            11px/1.0 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$phone-font :           14px/1.0 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$notice-kind-font :     9px/1.0 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$load-font :            16px/1.5 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$friendlink-font :      6px/1.5 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$copyright-font :       6px/1.5 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$seclist-font :         11px/1.5 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$telshow-font :         16px/1.5 "NSimSuns",
+                            "新宋体"， sans-serif;
+$releashow-lab-font :   90%/1.5 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$releashow-selec-font : 14px/1.5 "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$relea-seclist-font :   11px/30px "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+$relea-btn-font :       18px/26px "Microsoft YaHei",
+                            "微软雅黑", sans-serif;
+
+
+/* 路径
+ ----------------------------------------------------------*/
+$sprite-path :  "../images/all.jpg";
+$onepx :        "../images/onepx.png";

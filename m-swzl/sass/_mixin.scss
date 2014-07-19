@@ -2,9 +2,17 @@
 
 /* 圆角
  --------------------------------------------------*/
-@mixin radius($radius:5px) {
+@mixin radius( $radius:5px ) {
     border-radius:$radius; 
     -webkit-border-radius:$radius; 
     -moz-border-radius:$radius;
     -ms-border-radius:$radius;
+}
+
+/* user-select
+ --------------------------------------------------*/
+@mixin user-select( $style:none ) {
+    -moz-user-select:$style;
+    -webkit-user-select:$style;
+    -ms-user-select:$style;
 }
