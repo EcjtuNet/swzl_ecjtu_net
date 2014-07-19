@@ -30,7 +30,6 @@ $( document ).ready( function () {
         var dateHandle = function ( days ) {
             var time = new Date();
             time.setDate( time.getDate() - days + 1 );
-            console.log(time)
             var year  = time.getFullYear()
             ,   month = time.getMonth() + 1
             ,   date  = time.getDate();
@@ -45,7 +44,7 @@ $( document ).ready( function () {
                     var count = data.count
                     ,   list  = data.list
                     ,   i = 0;
-                    var box = $( '#contentlist ul' );
+                    var box = $( '#contentlist > ul' );
                     var template = $( '#template' ).html();
                     for ( ; ++i < count; ) {
                         var unix = list[ i ][ 'time' ];
@@ -65,7 +64,7 @@ $( document ).ready( function () {
             }, 'json' );
 
         };
-        show();
+        show('/test');
         
         //搜索启事切换
         noticekindBtn.click( function () {
@@ -94,7 +93,8 @@ $( document ).ready( function () {
         $( '#searchBtnBox' ).click( function () {
             page = 1;
             searchType = 'normal';
-            url = 'http://swzl.ecjtu.net/api.php/' + type + page;
+            url = 'http://swzl.ecjtu.net/api.php/' + type.slice(0, type.length-1)
+                + '&key=' + $( this ).prev().val();
             show( url );
         } );
         
@@ -193,11 +193,13 @@ $( document ).ready( function () {
         $( '#load' ).click( function () {
             page += 1;
             if ( searchType === 'normal' ) {
-                url = 'http://swzl.ecjtu.net/api.php/' + type + page;
+                url = 'http://swzl.ecjtu.net/api.php/' + type + '/' + page;
             } else {
-                url += '&page=' + page;
+                url = page !== 2 ? url.slice(0, url.indexOf('&') ) 
+                    + '&page=' + page : 
+                    url += '&page=' + page;
             }
-            show( url );
+            show( '/test' );
         } );
         
         //Dom重画部分
