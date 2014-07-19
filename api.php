@@ -1,6 +1,7 @@
 <?php
 
 define('count_per_page', 20);
+date_default_timezone_set("Asia/Chongqing");
 
 class Baseinfo {
 	function __construct($arg=False){
