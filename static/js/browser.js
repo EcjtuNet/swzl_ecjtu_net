@@ -27,9 +27,9 @@ function DOMContentLoad() {
         return;
     } else {
         if ( url.charAt( url.length - 1 ) === '/' ) {
-            window.location.href = url + 'm';
+            window.location.href = url + 'm/';
         } else {
-            window.location.href = url + '/m';
+            window.location.href = url + '/m/';
         }
         if(window.event) {
             window.event.returnValue = false; 
