@@ -19,6 +19,7 @@
     }
 ?>
 </style>
+<script type="text/javascript" src="/static/js/browser.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>static/js/jquery-1.8.2.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>static/js/beautiful-select.js"></script>
 <script type="text/javascript">
