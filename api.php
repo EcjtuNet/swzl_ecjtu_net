@@ -6,7 +6,7 @@ date_default_timezone_set("Asia/Chongqing");
 class Baseinfo {
 	function __construct($arg=False){
 		try {
-			$this->db = new PDO('mysql:dbname=swzl_ecjtu_net;host=127.0.0.1', 'swzl_ecjtu_net', 'EcjtuNetSwzl_17#409');
+			$this->db = new PDO('mysql:dbname=swzl_ecjtu_net;host=127.0.0.1', 'homestead', 'secret');
 			$this->db->query('set names utf8;');
 		}catch (PDOException $e) {
 		    $this->output_msg = 'Database error';
@@ -197,7 +197,7 @@ $app->get('/found', function () use ($app) {
 	foreach ($get as $key => $value) {
 		$get[$key] = strip_tags($value);
 	}
-	$found = new found();
+	$found = new Found();
 	$page = isset($get['page']) ? $get['page'] : 1;
 	echo $found->find($get, $page, count_per_page);
 	return true;
