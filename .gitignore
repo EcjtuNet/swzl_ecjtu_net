@@ -1,4 +1,6 @@
 findapp/config/database.php
+findapp/config/config.php
+.idea/
 myadmin_51
 data.sql
 find.sql
