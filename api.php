@@ -6,7 +6,7 @@ date_default_timezone_set("Asia/Chongqing");
 class Baseinfo {
 	function __construct($arg=False){
 		try {
-			$this->db = new PDO('mysql:dbname=swzl_ecjtu_net;host=127.0.0.1', 'homestead', 'secret');
+			$this->db = new PDO('mysql:dbname=swzl_ecjtu_net;host=127.0.0.1', 'root', '');
 			$this->db->query('set names utf8;');
 		}catch (PDOException $e) {
 		    $this->output_msg = 'Database error';
