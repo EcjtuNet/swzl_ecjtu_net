@@ -34,6 +34,22 @@ module.exports = {
                     "style-loader",
                     "css-loader"
                 ]
+            },
+            {
+                test: /\.(png|jpg)$/,
+                use: {
+                    loader: 'url-loader',
+                    query: {
+                        limit: "8192",
+                        name: "images/[hash:8].[name].[ext]"
+                    }
+                }
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    "html-withimg-loader"
+                ]
             }
         ]
     },
@@ -42,7 +58,9 @@ module.exports = {
             $: path.resolve(__dirname, "node_modules/jquery/dist/jquery"),
             jQuery: path.resolve(__dirname, "node_modules/jquery/dist/jquery")
         }),
-        new UglifyJSPlugin(),
+        new UglifyJSPlugin({
+            except: ['$super', '$', 'exports', 'require']
+        }),
         new HtmlWebpackPlugin({
             filename: '../build/index.html',
             template: './index.html',
@@ -52,5 +70,8 @@ module.exports = {
                 collapseWhitespace:true
             }
         })
-    ]
+    ],
+    devServer: {
+        contentBase:'./build'
+    }
 };
