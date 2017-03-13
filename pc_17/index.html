@@ -7,7 +7,7 @@
 </head>
 <body>
 <header>
-    <nav class="nav">
+    <nav id="nav" class="nav">
         <div class="nav__brand">
             <a href="#">
                 <img src="./src/images/rixin_logo.png" alt="Logo">
@@ -26,28 +26,138 @@
     </nav>
 
     <div class="jumbotron">
-        <h1>寻找物品的主人</h1>
+        <h1>寻找物品的主人...</h1>
         <div class="jumbotron__search">
-            <form action="">
-                <input type="text" value="搜索您丢失或捡到的物品">
-                <input type="submit" value="提交">
+            <form action="#" method="get">
+                <input type="text" placeholder="搜索您丢失或捡到的物品">
+                <a href="#" class="go"></a>
             </form>
         </div>
     </div>
 </header>
-<!--<div id="content">-->
-    <!--<div class="info">-->
-        <!--<img src="" alt="">-->
-        <!--<h3></h3>-->
-        <!--<ul>-->
-            <!--<li></li>-->
-            <!--<li></li>-->
-            <!--<li></li>-->
-        <!--</ul>-->
-        <!--<div class="detail">-->
-            <!--<p></p>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
+
+<div id="content" class="content">
+    <div class="content__selector">
+    </div>
+    <div class="content__wrap">
+        <div class="content__info">
+            <div class="content__info-name">
+                <h1>继续教育电气曾同学学生证</h1>
+            </div>
+            <div class="content__info-items">
+                <div class="content__info-type">
+                    <p>丢失</p>
+                </div>
+                <div class="content__info-kind">
+                    <p>卡类物件</p>
+                </div>
+                <div class="content__info-time">
+                    <p>2016-9-3</p>
+                </div>
+                <div class="content__info-place">
+                    <p>图书馆附近</p>
+                </div>
+            </div>
+        </div>
+        <div class="content__info">
+            <div class="content__info-name">
+                <h1>继续教育电气</h1>
+            </div>
+            <div class="content__info-items">
+                <div class="content__info-type">
+                    <p>丢失</p>
+                </div>
+                <div class="content__info-kind">
+                    <p>随身用品</p>
+                </div>
+                <div class="content__info-time">
+                    <p>2016-10-3</p>
+                </div>
+                <div class="content__info-place">
+                    <p>图书馆</p>
+                </div>
+            </div>
+        </div>
+        <div class="content__info">
+            <div class="content__info-name">
+                <h1>学生证</h1>
+            </div>
+            <div class="content__info-items">
+                <div class="content__info-type">
+                    <p>丢失</p>
+                </div>
+                <div class="content__info-kind">
+                    <p>卡类物件</p>
+                </div>
+                <div class="content__info-time">
+                    <p>2017-9-3</p>
+                </div>
+                <div class="content__info-place">
+                    <p>食堂</p>
+                </div>
+            </div>
+        </div>
+        <div class="content__info">
+            <div class="content__info-name">
+                <h1>继续</h1>
+            </div>
+            <div class="content__info-items">
+                <div class="content__info-type">
+                    <p>招领</p>
+                </div>
+                <div class="content__info-kind">
+                    <p>衣物</p>
+                </div>
+                <div class="content__info-time">
+                    <p>2017-3-3</p>
+                </div>
+                <div class="content__info-place">
+                    <p>北区网球场旁边</p>
+                </div>
+            </div>
+        </div>
+        <div class="content__info">
+            <div class="content__info-name">
+                <h1>继续教育电气曾同学学生证</h1>
+            </div>
+            <div class="content__info-items">
+                <div class="content__info-type">
+                    <p>丢失</p>
+                </div>
+                <div class="content__info-kind">
+                    <p>卡类物件</p>
+                </div>
+                <div class="content__info-time">
+                    <p>2016-9-3</p>
+                </div>
+                <div class="content__info-place">
+                    <p>图书馆附近</p>
+                </div>
+            </div>
+        </div>
+        <div class="content__info">
+            <div class="content__info-name">
+                <h1>学生证</h1>
+            </div>
+            <div class="content__info-items">
+                <div class="content__info-type">
+                    <p>丢失</p>
+                </div>
+                <div class="content__info-kind">
+                    <p>卡类物件</p>
+                </div>
+                <div class="content__info-time">
+                    <p>2016-9-3</p>
+                </div>
+                <div class="content__info-place">
+                    <p>图书馆附近</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<canvas id="particles"></canvas>
 </body>
 </html>

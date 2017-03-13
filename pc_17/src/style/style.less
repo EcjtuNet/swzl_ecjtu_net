@@ -1,15 +1,9 @@
 @import 'var.less';
 @import 'reset.less';
 
-body {
-  height: 5000px;
-}
-
 header {
   height: @headerHeightBig;
-  background-image: url(@jumPic1280);
-  background-repeat: no-repeat;
-  background-position: center 0px;
+  background:-webkit-gradient(linear, 0 0, 0 bottom, from(#27ae60),to(rgba(82, 226, 156, 0.7)));
 }
 
 .nav {
@@ -43,12 +37,11 @@ header {
     & a {
       font-size: 15px;
       line-height: 20px;
-      width: 60px;
       margin-right: 20px;
       float: left;
 
       &:hover {
-        border-bottom: solid #1c7bd8 1px;
+        border-bottom: solid #16c9e2 2px;
       }
     }
   }
@@ -62,14 +55,82 @@ header {
 
 .jumbotron {
   & h1 {
+    color: #fcfaff;
     font-size: @jumH1Big;
-    width: 30%;
-    margin: 0 auto;
+    line-height: @jumH1Big;
+    font-weight: lighter;
+    text-align: center;
     padding-top: 200px;
+    margin: 0 0;
   }
 
   &__search {
-    width: 20%;
-    margin: 50px auto;
+    text-align: center;
+    padding-top: 50px;
+    position: relative;
+
+    & input {
+      margin: 0 auto;
+      padding: 0 10px;
+      width: 45%;
+      height: 34px;
+      border: 1px solid rgba(255, 255, 255, .8);
+      border-radius: 2px;
+      color: #282828;
+      background: rgba(0, 0, 0, .15);
+    }
+
+    & .go {
+      position: absolute;
+      margin-left: -1px;
+      width: 40px;
+      height: 34px;
+      background: url(../images/search-icon.svg) 9px 7px no-repeat;
+      background-color: rgba(0, 0, 0, .15);
+      border: 1px solid rgba(255, 255, 255, .8);
+      cursor: pointer;
+
+      &:hover {
+        border: 2px solid rgba(255, 255, 255, .8);
+      }
+    }
+  }
+}
+
+#particles {
+  display: block;
+  height: @headerHeightBig;
+  width: 100%;
+  position: absolute;
+  top:0;
+  z-index: -999;
+  background: #21389c;
+}
+
+.content {
+  position: relative;
+
+  &__wrap {
+    margin : auto auto;
+  }
+
+  &__info {
+    background-color: rgba(239, 237, 238, 0.44);
+    border: 2px solid rgba(239, 237, 238, 0.44);
+    border-radius: 2px;
+    box-shadow: 3px 3px 3px #888888;
+    margin: 10px;
+    padding: 10px;
+    width: 30%;
+    &-name {
+      & h1 {
+        font-size: 30px;
+        line-height: 30px;
+      }
+    }
+    &-type, &-kind, &-tiem, &-place {
+      border: solid black 1px;
+      position: absolute;
+    }
   }
 }

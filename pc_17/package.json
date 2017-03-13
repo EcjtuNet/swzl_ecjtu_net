@@ -29,6 +29,8 @@
     "html-withimg-loader": "^0.1.16",
     "less": "^2.7.2",
     "less-loader": "^3.0.0",
+    "svg-loader": "0.0.2",
+    "svg-url-loader": "^2.0.2",
     "uglify-js": "^2.8.12",
     "uglifyjs-webpack-plugin": "^0.3.0",
     "url-loader": "^0.5.8",

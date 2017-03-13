@@ -50,6 +50,13 @@ module.exports = {
                 use: [
                     "html-withimg-loader"
                 ]
+            },
+            {
+                test: /\.svg/,
+                use: {
+                    loader: 'svg-url-loader',
+                    options: {}
+                }
             }
         ]
     },
