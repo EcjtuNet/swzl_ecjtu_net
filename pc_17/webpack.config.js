@@ -90,6 +90,16 @@ module.exports = {
         )
     ],
     devServer: {
-        contentBase:'./build'
+        contentBase:'./build',
+        proxy: {
+            '/api.php/*': {
+                target: 'http://localhost:9090/db',
+                secure: false,
+                changeOrigin: true,
+                pathRewrite: {
+                    '/api.php': ''
+                }
+            }
+        }
     }
 };

@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build"
+    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build",
+    "mock": "node_modules/.bin/json-server --watch mock/mock.json --port 9090",
+    "mockdev": "npm run mock & npm run dev"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +17,7 @@
     "css-loader": "^0.27.1",
     "jquery": "^3.1.1",
     "less": "^2.7.2",
+    "mustache": "^2.3.0",
     "normalize.css": "^5.0.0",
     "style-loader": "^0.13.2",
     "webpack-dev-server": "^2.4.1"
@@ -27,10 +30,13 @@
     "browser-sync": "^2.18.8",
     "browser-sync-webpack-plugin": "^1.1.4",
     "file-loader": "^0.10.1",
+    "hogan.js": "^3.0.2",
     "html-webpack-plugin": "^2.28.0",
     "html-withimg-loader": "^0.1.16",
+    "json-server": "^0.9.6",
     "less": "^2.7.2",
     "less-loader": "^3.0.0",
+    "mustache-loader": "^0.4.1",
     "svg-loader": "0.0.2",
     "svg-url-loader": "^2.0.2",
     "uglify-js": "^2.8.12",
