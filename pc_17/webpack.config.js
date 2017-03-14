@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -76,7 +77,17 @@ module.exports = {
                 removeComments:true,
                 collapseWhitespace:true
             }
-        })
+        }),
+        new BrowserSyncPlugin(
+            {
+                host: 'localhost',
+                port: 3000,
+                proxy: 'http://localhost:8080/'
+            },
+            {
+                reload: false
+            }
+        )
     ],
     devServer: {
         contentBase:'./build'
