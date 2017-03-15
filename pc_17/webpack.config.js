@@ -93,7 +93,7 @@ module.exports = {
         contentBase:'./build',
         proxy: {
             '/api.php/*': {
-                target: 'http://localhost:9090/db',
+                target: 'http://localhost:9090/swzl',
                 secure: false,
                 changeOrigin: true,
                 pathRewrite: {

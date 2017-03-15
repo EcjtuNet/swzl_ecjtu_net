@@ -2,7 +2,7 @@
  * Created by skycheung on 2017/3/13.
  */
 
-exports.ball  = function () {
+var ball  = function () {
     var canvas = $("#particles");
     var context = canvas.get(0).getContext("2d");
     var canvasWidth = canvas.width();
@@ -72,3 +72,6 @@ exports.ball  = function () {
 
     animate();
 };
+
+export default ball
+

@@ -3,14 +3,13 @@
  */
 import Mustache from './mustache';
 
-exports.render = function (url, contentWrap, template) {
-    $.get(url, function (data, status) {
-        var contentWrap = $("#"+contentWrap);
+var render = function (url, template) {
+    $.get(url, function (data) {
+        var contentWrap = $(".content__wrap");
         if ( data.count ) {
             var count = data.count,
                 list = data.list,
                 i = 0;
-            var template = template.html();
             for (i; i < count; i++) {
                 var unix = list[i]['time'];
                 list[i]['time'] = handleTime(unix);
@@ -32,3 +31,4 @@ exports.render = function (url, contentWrap, template) {
     }
 };
 
+export default render

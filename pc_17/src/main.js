@@ -3,17 +3,14 @@
  */
 import 'normalize.css';
 import '../src/style/style.less';
-import particles from './js/particles';
-import masonry from './js/masonry';
-import query from './js/query';
+import ball from './js/particles';
+import render from './js/query';
 
 $(document).ready(
-    particles.ball(),
+    ball(),
     (function () {
         var baseUrl = 'api.php/';
-        var contentWrap = 'content__wrap';
         var template = require('../src/template.html');
-        var info = query.render(baseUrl, contentWrap, template);
-        console.log(info);
+        render(baseUrl, template);
     })()
 );
