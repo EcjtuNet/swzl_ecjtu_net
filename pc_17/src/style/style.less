@@ -111,7 +111,6 @@ header {
   position: relative;
   border: 1px solid silver;
 
-
   &__info {
     background-color: @contentInfoBackgroundColor;
     float: left;
@@ -119,36 +118,136 @@ header {
     transition: top 0.2s ease-out, left 0.2s ease-out,
       box-shadow 0.2s ease-out, border 0.2s ease-out;
     box-shadow: 0 2px 1px rgba(100, 100, 100, 0.3);
+    &-description {
+      padding: 5px;
+      & span {
+        margin-right: 10px;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-image: url(../images/info_description.png);
+        background-size: contain;
+      }
+      & p {
+               display: inline;
+               line-height: 30px;
+               font-size: 18px;
+             }
+    }
     &-name {
       & h1 {
         font-size: @contentInfoNameH1FontSizeL;
         line-height: @contentInfoNameH1FontSizeL;
+        text-align: center;
       }
     }
-    &-type, &-kind, &-tiem, &-place {
-      border: solid black 1px;
-      position: absolute;
+    &-items {
+      padding: 5px;
+      //float: left;
     }
+    &-type {
+      & span {
+        margin-right: 10px;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-image: url(../images/info_type.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      & p {
+        display: inline;
+        line-height: 30px;
+        font-size: 18px;
+      }
+    }
+    &-kind {
+      & span {
+        margin-right: 10px;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-image: url(../images/info_kind.png);
+        background-size: contain;
+      }
+      & p {
+        display: inline;
+        line-height: 30px;
+        font-size: 18px;
+      }
+    }
+    &-time {
+      & span {
+        margin-right: 10px;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-image: url(../images/info_time.png);
+        background-size: contain;
+      }
+      & p {
+        display: inline;
+        line-height: 30px;
+        font-size: 18px;
+      }
+    }
+    &-place {
+      & span {
+        margin-right: 10px;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-image: url(../images/info_place.png);
+        background-size: contain;
+      }
+      & p {
+        display: inline;
+        line-height: 30px;
+        font-size: 18px;
+      }
+    }
+    &-contact {
+      clear: both;
+      display: none;
+      & p {
+        display: inline;
+      }
+    }
+    &-people {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-image: url(../images/info_contact-people.png);
+        background-size: contain;
+    }
+    &-phone {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-image: url(../images/info_contact-phone.png);
+        background-size: contain;
+    }
+
   }
 }
 
 .col1 .content__info{
   width:96.8%;
-  width:e("calc(100% - 6px)");
+  width:e("calc(100% - 15px)");
   padding:0;
 }
 .col2 .content__info{
   width:48%;
-  width:e("calc(50% - 13px)");
+  width:e("calc(50% - 15px)");
   padding:0;
 }
 .col3 .content__info{
   width:31%;
-  width:e("calc(33% - 14px)");
+  width:e("calc(33% - 15px)");
   padding:0;
 }
 .col4 .content__info{
   width:23%;
-  width:e("calc(25%)");
+  width:e("calc(25% - 15px)");
   padding:0;
 }

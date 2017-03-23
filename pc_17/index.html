@@ -47,35 +47,35 @@
 <script type="text/template" id="template">
     <div class="content__info">
         <div class="content__info-name">
-            <h1>{{ name }}</h1>
+            <span></span><h1>{{ name }}</h1>
         </div>
         <div class="content__info-description">
-            <p>{{ description }}</p>
+            <span></span><p>{{ description }}</p>
         </div>
         <div class="content__info-items">
             <div class="content__info-type">
-                <p>{{ type }}</p>
+                <span></span><p>{{ type }}</p>
             </div>
             <div class="content__info-kind">
-                <p>{{ cname }}</p>
+                <span></span><p>{{ cname }}</p>
             </div>
             {{ #time }}
             <div class="content__info-time">
-                <p>{{ time }}</p>
+                <span></span><p>{{ time }}</p>
             </div>
             {{ /time }}
             {{ #place }}
             <div class="content__info-place">
-                <p>{{ place }}</p>
+                <span></span><p>{{ place }}</p>
             </div>
             {{ /place }}
         </div>
         <div class="content__info-contact">
             {{#owner}}
-            <p>联系人： {{ owner }} </p>
+            <span class="content__info-people"></span><p> {{ owner }} </p>
             {{/owner}}
             {{#phone}}
-            <p>联系电话： {{ phone }} </p>
+            <span class="content__info-phone"></span><p> {{ phone }} </p>
             {{/phone}}
         </div>
     </div>
