@@ -90,4 +90,4 @@ var waterfall = function (contentWrap) {
 
 };
 
-export {waterfall}
+export default waterfall

@@ -1,47 +1,48 @@
-@import 'var.less';
+//@import 'var.less';
 @import 'reset.less';
 
 header {
-  height: @headerHeightL;
+  height: 600px;
   background:-webkit-gradient(linear, 0 0, 0 bottom, from(#27ae60),to(rgba(82, 226, 156, 0.7)));
 }
 
 .nav {
   width: 100%;
-  height: @navHeightL;
-  background-color: @navColor;
+  height: 80px;
+  background-color: RGBA(255, 255, 255, .8);
   float: left;
 
   &__brand {
-    width: @navBrandWidthL;
-    height: @navBrandHeightL;
+    width: 80px;
+    height: 80px;
     float: left;
     & img {
-      margin: @navBrandImgMarginL;
+      margin: 11px;
     }
   }
 
   &__title {
-    font-size: @navTitleFontSizeL;
-    margin: @navTitleMarginTopL @navTitleMarginRightL @navTitleMarginBottomL @navTitleMarginLeftL;
+    font-size: 20px;
+    margin: 25px 25px 25px 15px;
     float: left;
   }
 
   &__menu {
-    height: @navMenuHeightL;
+    height: 40px;
     float: left;
-    margin-top: @navMenuMarginTopL;
+    margin-top: 27px;
     & li {
       float: left;
     }
     & a {
-      font-size: @navMenuFontSizeL;
-      line-height: @navMenuFontSizeL;
-      margin-right: @navMenuMarginRightL;
+      font-size: 15px;
+      line-height: 15px;
+      margin-right: 20px;
+      padding-bottom: 5px;
       float: left;
 
       &:hover {
-        border-bottom: solid @navMenuHoverColor 2px;
+        border-bottom: solid #16c9e2 2px;
       }
     }
   }
@@ -50,61 +51,51 @@ header {
 .fixed {
   position: fixed;
   top: 0;
-  background-color: @navColorFixed;
+  background-color: white;
 }
 
 .jumbotron {
   & h1 {
-    color: @jumH1Color;
-    font-size: @jumH1L;
-    line-height: @jumH1L;
+    color: #fcfaff;;
+    font-size: 50px;
+    line-height: 50px;
     font-weight: lighter;
     text-align: center;
-    padding-top: @jumH1PaddingTopL;
-    margin: @jumH1MarginL;
+    padding-top: 200px;
+    margin: 0;
   }
 
   &__search {
     text-align: center;
-    padding-top: @jumSearchPaddingTopL;
+    padding-top: 50px;
     position: relative;
 
     & input {
-      margin: @jumInputMarginTopL @jumInputMarginRightL @jumInputMarginBottomL @jumInputMarginLeftL;
-      padding: @jumInputPaddingTopL @jumInputPaddingRightL @jumInputMarginBottomL @jumInputPaddingLeftL;
-      width: @jumInputWidthL;
-      height: @jumInputHeightL;
-      border: 1px solid @jumInputBorderColor;
-      border-radius: @jumInputBorderRadius;
-      color: @jumInputBorderColor;
-      background: @jumInputBackground;
+      margin: 0 auto;
+      padding: 0 10px;
+      width: 45%;
+      height: 34px;
+      border: 1px solid rgba(255, 255, 255, .8);
+      border-radius: 2px;
+      color: rgba(255, 255, 255, .8);
+      background: rgba(0, 0, 0, .15);
     }
 
     & .go {
       position: absolute;
-      margin-left: @jumGoMarginLeftL;
-      width: @jumGoWidthL;
-      height: @jumGoHeightL;
+      margin-left: -1px;
+      width: 40px;
+      height: 34px;
       background: url(../images/search-icon.svg) 9px 7px no-repeat;
-      background-color: @jumGoBackgroundColor;
-      border: 1px solid @jumGoBorderColor;
+      background-color: rgba(0, 0, 0, .15);
+      border: 1px solid  rgba(255, 255, 255, .8);
       cursor: pointer;
 
       &:hover {
-        border: 2px solid @jumGoBorderColor;
+        border: 2px solid rgba(255, 255, 255, .8);
       }
     }
   }
-}
-
-#particles {
-  display: block;
-  height: @headerHeightL;
-  width: 100%;
-  position: absolute;
-  top:0;
-  z-index: -999;
-  background: #21389c;
 }
 
 .content {
@@ -112,7 +103,7 @@ header {
   border: 1px solid silver;
 
   &__info {
-    background-color: @contentInfoBackgroundColor;
+    background-color: rgba(194, 203, 185, 0.44);
     float: left;
     position: absolute;
     transition: top 0.2s ease-out, left 0.2s ease-out,
@@ -136,14 +127,13 @@ header {
     }
     &-name {
       & h1 {
-        font-size: @contentInfoNameH1FontSizeL;
-        line-height: @contentInfoNameH1FontSizeL;
+        font-size: 30px;
+        line-height: 30px;
         text-align: center;
       }
     }
     &-items {
       padding: 5px;
-      //float: left;
     }
     &-type {
       & span {
@@ -152,7 +142,6 @@ header {
         width: 30px;
         height: 30px;
         background-image: url(../images/info_type.png);
-        background-repeat: no-repeat;
         background-size: contain;
       }
       & p {
@@ -250,4 +239,26 @@ header {
   width:23%;
   width:e("calc(25% - 15px)");
   padding:0;
+}
+
+
+#particles {
+  display: block;
+  height: 600px;
+  width: 100%;
+  position: absolute;
+  top:0;
+  z-index: -999;
+  background: #21389c;
+}
+
+#mask {
+  display: none;
+  position: absolute;
+  top: 0;
+  filter: alpha(opacity=60);
+  background-color: #777;
+  z-index: 1002;
+  left: 0;
+  opacity:0.5;
 }

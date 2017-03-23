@@ -3,14 +3,18 @@
  */
 import 'normalize.css';
 import '../src/style/style.less';
-import ball from './js/particles';
+import ball from './js/ball';
 import render from './js/query';
-import {waterfall} from './js/masonry';
+import waterfall from './js/waterfall';
 
 $(document).ready( function () {
     (function () {
-        var contentWrap = $(".content__wrap");
-        var template = $("#template").html();
+        var contentWrap = $(".content__wrap"),
+            template = $("#template").html(),
+            navFind = $(".nav__menu li")[0],
+            navLost = $(".nav__menu li")[1],
+            navNew = $(".nav__menu li")[2],
+            mask = $("#mask");
 
         ball();
 
@@ -22,6 +26,12 @@ $(document).ready( function () {
         (function () {
             waterfall(contentWrap);
         })();
+
+        navNew.addEventListener('click', function () {
+            mask.css("height",$(document).height());
+            mask.css("width",$(document).width());
+            mask.show();
+        });
 
     })()
 });
