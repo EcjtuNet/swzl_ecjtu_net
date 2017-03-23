@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://swzl.ecjtu.net/';
+$config['base_url']	= '';
 
 /*
 |--------------------------------------------------------------------------
